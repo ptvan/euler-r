@@ -13,6 +13,6 @@ lcm <- 1
 
 for (i in 1:length(factors)){
   count <- max(unlist(lapply(lapply(lapply(lst, function(x)return(x==factors[i])), which), length) ))
-  cat(factors[i], " x ", count, "\n")
+  # cat(factors[i], " x ", count, "\n")
   lcm <- lcm * factors[i] ^ count
 }
