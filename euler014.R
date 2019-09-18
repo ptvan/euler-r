@@ -31,3 +31,4 @@ for (i in 1:1e6){
 }
 cat(longest, "\n")
 
+## TO-DO: dynamic programming / memoization
