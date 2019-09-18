@@ -8,3 +8,5 @@ factorial(40)/ ((factorial(20)*(factorial(40-20))))
 
 # not surprisingly there is a base R function for this
 choose(40,20)
+
+## TO-DO: dynamic programming where we actually calculate number of paths
