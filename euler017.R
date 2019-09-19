@@ -58,15 +58,15 @@ for (i in 1:1000){
     digits <- as.numeric(unlist(strsplit(as.character(i), "")))
     if (digits[2] == 0) {
       str <- paste(singles[digits[1]],"hundred", singles[digits[3]], sep=" ")
-  }
+    }
     
-  if (digits[2] == 1) {
-      str <- paste(singles[digits[1]],"hundred", teens[digits[2]], singles[digits[3]], sep=" ")
-  }
-    
-  if (digits[2] >=2)  
-      str <- paste(singles[digits[1]],"hundred", tens[digits[2]], singles[digits[3]], sep=" ")
-  }
+    if (digits[2] == 1) {
+        str <- paste(singles[digits[1]],"hundred", teens[digits[2]], singles[digits[3]], sep=" ")
+    }
+      
+    if (digits[2] >=2)  
+        str <- paste(singles[digits[1]],"hundred", tens[digits[2]], singles[digits[3]], sep=" ")
+    }
 
   if (i == 1000){
     str <- "one thousand"
