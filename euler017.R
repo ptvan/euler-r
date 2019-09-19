@@ -64,9 +64,10 @@ for (i in 1:1000){
         str <- paste(singles[digits[1]],"hundred", teens[digits[2]], singles[digits[3]], sep=" ")
     }
       
-    if (digits[2] >=2)  
+    if (digits[2] >=2) {  
         str <- paste(singles[digits[1]],"hundred", tens[digits[2]], singles[digits[3]], sep=" ")
     }
+  }
 
   if (i == 1000){
     str <- "one thousand"
