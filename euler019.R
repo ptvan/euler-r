@@ -12,11 +12,12 @@
 # 
 # How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
   
-# using libraries, nott terribly faster, but a bit cleaner and less error-prone
-
+# using libraries, not terribly faster, but a bit cleaner and less error-prone
 library(lubridate)
 startDate <- dmy("1-Jan-1901")
 endDate <- dmy("31-Dec-2000")
 allDays <- seq(from = startDate, to = endDate, by = "days")
 sundays <- allDays[which(wday(allDays)==1)]
 length(sundays[day(sundays) == 1])
+
+## TO-DO: manual version
