@@ -17,6 +17,8 @@
 # 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 # 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
 
+# to make this scaleable, I've used a sparse matrix
+
 width <- 16
 height <- 16
   
@@ -37,12 +39,17 @@ raw[[12]] <- c(unlist(strsplit("70 11 33 28 77 73 17 78 39 68 17 57", " ")), rep
 raw[[13]] <- c(unlist(strsplit("91 71 52 38 17 14 91 43 58 50 27 29 48", " ")), rep(0,width-13))
 raw[[14]] <- c(unlist(strsplit("63 66 04 68 89 53 67 30 73 16 69 87 40 31", " ")), rep(0,width-14))
 raw[[15]] <- c(unlist(strsplit("04 62 98 27 23 09 70 98 73 93 38 53 60 04 23", " ")), rep(0,width-15))
+
 m <- Matrix(do.call(rbind, raw), sparse=TRUE)
 
 total <- 0
 curCol <- 1
-curVal <- 75
+curVal <- m[1,1]
 i <- 1
+
+# there is a subtle bug here when encountering multiple same values on the same row
+# the algorithm below would compute values on all paths
+# I've worked around it bby using max(), but should be addressed for a cleaner solution
 
 while (i < nrow(m)){
   # cat("row", i, "current =", m[i, curCol])
