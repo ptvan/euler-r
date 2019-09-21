@@ -8,6 +8,7 @@
 # What is the total of all the name scores in the file?
 
 # even using base R, this is fairly straightforward
+# NOTE: had to add an EOL char to the end of the input file for read.csv to work
 
 raw <- read.csv("euler022_names.txt")
 names <- sort(colnames(raw))
