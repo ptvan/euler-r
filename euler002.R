@@ -3,7 +3,7 @@
 # find the sum of the even-valued terms.
 
 fib <- function(upper){
-  vec <- c(1,2)
+  vec <- c(1,1,2)
   while (vec[length(vec)] < upper){
     val <- vec[length(vec)] + vec[length(vec)-1]
     if(val < upper){
