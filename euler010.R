@@ -1,7 +1,7 @@
 # Project Euler problem 010
 # Find the sum of all the primes below two million.
 
-# This is a more computationally intensitve version of euler007, 
+# This is a more computationally intensive version of euler007, 
 # so we implement a more R-ish solution which is a lot faster
 
 primes <- function(n){
