@@ -3,7 +3,7 @@
 # How many such routes are there through a 20×20 grid?
 
 # Recognize that all paths have 40 steps, and we're trying to find all
-# possible combinations of 20-step paths. This is a binomial coeffient
+# possible combinations of 20-step paths. This is a binomial coefficient
 factorial(40)/ ((factorial(20)*(factorial(40-20))))
 
 # not surprisingly there is a base R function for this
