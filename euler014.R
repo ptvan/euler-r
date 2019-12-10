@@ -31,4 +31,43 @@ for (i in 1:1e6){
 }
 cat(longest, "\n")
 
-## TO-DO: dynamic programming / memoization
+# dynamic programming / memoization version
+collatz_fast <- function(n){
+  seq <- c()
+  seq <- c(seq, n)
+  tmp <- n
+  has2 <- list()
+  
+  while (tmp > 1) {
+    if (tmp %% 2 == 0) {
+      tmp <- tmp / 2
+      if (tmp %in% has2){
+        seq <- c(seq, has2$tmp)
+        break
+        } else {
+          seq <- c(seq, tmp)}
+    } else {
+        tmp = 3 * tmp + 1
+        if (tmp %in% has2){
+          seq <- c(seq, has2$tmp)
+          break
+          } else {
+            seq <- c(seq, tmp)
+          }
+      }
+    
+  }
+  has2$n <- seq
+  return(length(seq))
+}
+
+num <- 0
+biggest <- 0
+for (i in 1:1000000){
+  c <- collatz_fast(i)
+  if (num < c){
+    num <- c
+  }
+  biggest <- i
+}
+cat(biggest, "has", num, "elements")
