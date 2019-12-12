@@ -17,7 +17,7 @@
 # 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 # 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
 
-# to make this scaleable, I've used a sparse matrix
+# to make the solution scaleable, I've used a sparse matrix
 
 width <- 16
 height <- 16
@@ -48,8 +48,8 @@ curVal <- m[1,1]
 i <- 1
 
 # there is a subtle bug here when encountering multiple same values on the same row
-# the algorithm below would compute values on all paths
-# I've worked around it bby using max(), but should be addressed for a cleaner solution
+# the code below would compute values on all paths below that row
+# I've worked around this by using max(), but should be addressed for a cleaner solution
 
 while (i < nrow(m)){
   # cat("row", i, "current =", m[i, curCol])
