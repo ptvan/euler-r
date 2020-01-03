@@ -24,8 +24,7 @@ cat(n)
 # (https://en.wikipedia.org/wiki/Fibonacci_number#Relation_to_the_golden_ratio)
 # specifically phi^n / sqrt(5) where phi ~ 1.6180
 # since we want 1000 digits, set (phi^n / sqrt(5)) = 999 and solve
-# I used "=" for assignment below since "->", while still valid R syntax, would have been confusing
 
-phi = 1.6180
-n = floor((log(10)*999 + log(5)/2)/log(phi))
+phi <- 1.6180
+n <- floor((log(10)*999 + log(5)/2)/log(phi))
 cat(n)
